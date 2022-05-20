@@ -108,8 +108,8 @@ void englishsignIn()
 		 if(password==a.password)
 		 {
 			 printf("Login success!\n");
-                         printAccount(a);
-			 return 0；
+                         return 0；
+			
 		 }
 		 else
 		 {
