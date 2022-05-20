@@ -80,7 +80,7 @@ void signIn()
 		 if(password==a.password)
 		 {
 			 printf("登陆成功\n");
-             printAccount(a);
+                         printAccount(a);
 			 return 0；
 		 }
 		 else
@@ -108,7 +108,7 @@ void englishsignIn()
 		 if(password==a.password)
 		 {
 			 printf("Login success!\n");
-             printAccount(a);
+                         printAccount(a);
 			 return 0；
 		 }
 		 else
