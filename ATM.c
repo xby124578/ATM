@@ -14,53 +14,53 @@ typedef struct Account Account;
 
 void showChinese()
 {
-	printf("°´1£¬¿ª»§\n");
-	printf("°´2£¬µÇÂ¼\n");
+	printf("æŒ‰1ï¼Œå¼€æˆ·\n");
+	printf("æŒ‰2ï¼Œç™»å½•\n");
 }
 
 void showEnglish()
 {
-	printf("Press 1£¬Sign Up\n");
-	printf("Press 2£¬Sign In\n");
+	printf("Press 1ï¼ŒSign Up\n");
+	printf("Press 2ï¼ŒSign In\n");
 }
 
 Account a;
 void signUp()
 {
-	printf("ÇëÊäÈëÄãµÄĞÕÃû£º\n");
+	printf("è¯·è¾“å…¥ä½ çš„å§“åï¼š\n");
 	scanf("%s",a.name); 
 	
-	printf("ÇëÊäÈëÄãµÄµç»°£º\n");
+	printf("è¯·è¾“å…¥ä½ çš„ç”µè¯ï¼š\n");
 	scanf("%s",a.tel); 
 	
-	printf("ÇëÊäÈëÄãµÄÉí·İÖ¤£º\n");
+	printf("è¯·è¾“å…¥ä½ çš„èº«ä»½è¯ï¼š\n");
 	scanf("%s",a.idCard); 
 	
-	printf("ÇëÉèÖÃÕÊºÅ£º\n");
+	printf("è¯·è®¾ç½®å¸å·ï¼š\n");
 	scanf("%s",a.username); 
 	
-	printf("ÇëÉèÖÃÃÜÂë£º\n");
+	printf("è¯·è®¾ç½®å¯†ç ï¼š\n");
 	scanf("%s",a.password);
 	
 	a.money=0.0f;
 	
-	printf("¹§Ï²Äã£¬Íê³É×¢²á£¡\n");
+	printf("æ­å–œä½ ï¼Œå®Œæˆæ³¨å†Œï¼\n");
 } 
 void englishsignUp()
 {
-	printf("Please enter your name£º\n");
+	printf("Please enter your nameï¼š\n");
 	scanf("%s",a.name); 
 	
-	printf("please enter your tel£º\n");
+	printf("please enter your telï¼š\n");
 	scanf("%s",a.tel); 
 	
-	printf("please enter your idcard£º\n");
+	printf("please enter your idcardï¼š\n");
 	scanf("%s",a.idCard); 
 	
-	printf("please enter your account£º\n");
+	printf("please enter your accountï¼š\n");
 	scanf("%s",a.username); 
 	
-	printf("please enter your password£º\n");
+	printf("please enter your passwordï¼š\n");
 	scanf("%s",a.password);
 	
 	a.money=0.0f;
@@ -69,31 +69,60 @@ void englishsignUp()
 }
 
 void signIn()
-{
-	printf("ÇëÊäÈëÄúµÄÕËºÅ£º\n");
+{   
+	char username,password;
+	printf("è¯·è¾“å…¥æ‚¨çš„è´¦å·ï¼š\n");
 	scanf("%s",&username);
 	if(username==a.username)
 	{
-         printf("ÇëÊäÈëÄúµÄÃÜÂë£º\n");
+         printf("è¯·è¾“å…¥æ‚¨çš„å¯†ç ï¼š\n");
 	     scanf("%s",&passeord);
-		 if(passeord==a.passeord)
+		 if(password==a.password)
 		 {
-			 printf("µÇÂ½³É¹¦\n");
+			 printf("ç™»é™†æˆåŠŸ\n");
+             printAccount(a);
+			 return 0ï¼›
 		 }
 		 else
 		 {
-			 printf("ÃÜÂë´íÎó\n");
-			 break;
+			 printf("å¯†ç é”™è¯¯\n");
+			 return 0ï¼›
 		 }
 	}
 	else
 	{
-		 printf("ÕËºÅ´íÎó,ÇëÖØĞÂ½øÈëÏµÍ³\n");
-		 break£»
+		 printf("è´¦å·é”™è¯¯,è¯·é‡æ–°è¿›å…¥ç³»ç»Ÿ\n");
+		 return 0ï¼›
 	}
 		
 
-
+void englishsignIn()
+{   
+	char username,password;
+	printf("please enter your accountï¼š\n");
+	scanf("%s",&username);
+	if(username==a.username)
+	{
+         printf("please enter your passwordï¼š\n");
+	     scanf("%s",&passeord);
+		 if(password==a.password)
+		 {
+			 printf("Login success!\n");
+             printAccount(a);
+			 return 0ï¼›
+		 }
+		 else
+		 {
+			 printf("wrong paswerd!\n");
+			 return 0ï¼›
+		 }
+	}
+	else
+	{
+		 printf("wrong accounts!\n");
+		 return 0ï¼›
+	}
+		
 } 
 
 void printAccount(Account a)
@@ -103,8 +132,8 @@ void printAccount(Account a)
 
 int main()
 {
-	printf("°´1£¬ÖĞÎÄÏÔÊ¾\n");
-	printf("Press 2£¬Show English\n");
+	printf("æŒ‰1ï¼Œä¸­æ–‡æ˜¾ç¤º\n");
+	printf("Press 2ï¼ŒShow English\n");
 	int n;
 	scanf("%d",&n);
 	if(n==1)
@@ -134,7 +163,16 @@ int main()
 	}
 	else if(k==2)
 	{
-		signIn();
+		if(n==2)
+		{
+			englishsignIn();	
+		}
+		else if(n==1)
+		{
+			signIn();
+		}
+
+		
 	} 
 	
 	return 0;
