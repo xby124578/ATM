@@ -7,7 +7,7 @@
 #include"conio.h"
 
 
-//º¯ÊıÉùÃ÷
+//å‡½æ•°å£°æ˜
 void Main1();
 void InitTraData();
 void SignUp(); 
@@ -79,7 +79,7 @@ Trade* TCurAccount;
 Trade TA;
 
 
-int FindACC(Account IV1)//µÇÂ¼Ê±²éÕÒµ±Ç°ÕË»§
+int FindACC(Account IV1)
 {
 	Account* curP = head;
 	Trade* TcurP = THead;
@@ -94,7 +94,7 @@ int FindACC(Account IV1)//µÇÂ¼Ê±²éÕÒµ±Ç°ÕË»§
 	return 0;
 }
 
-int FindPassword(Account IV1)//µÇÂ¼Ê±²éÕÒµ±Ç°ÕË»§ÃÜÂë
+int FindPassword(Account IV1)
 {
 	Account* curP = head;
 	while (curP != NULL)
@@ -109,7 +109,7 @@ int FindPassword(Account IV1)//µÇÂ¼Ê±²éÕÒµ±Ç°ÕË»§ÃÜÂë
 	return 0;
 }
 
-int FindACC2(Account IV)//²éÕÒÊÇ·ñ±»ÒÑÓĞÕË»§
+int FindACC2(Account IV)
 {
 	Account* curP = head;
 	while (curP != NULL)
@@ -123,7 +123,7 @@ int FindACC2(Account IV)//²éÕÒÊÇ·ñ±»ÒÑÓĞÕË»§
 	return 0;
 }
 
-int FindACC3(Account TT)//²éÕÒ×ªÕËÕË»§
+int FindACC3(Account TT)
 {
 	Account* curP = head;
 	while (curP != NULL)
@@ -131,12 +131,12 @@ int FindACC3(Account TT)//²éÕÒ×ªÕËÕË»§
 		if (strcmp(curAccount->AccountNum, TT.AccountNum) == 0)
 		{
 			int a, b = 0;
-			printf("\n´íÎó£¡\n");
+			printf("\né”™è¯¯ï¼\n");
 			while (b < 3)
 			{
-				printf("\n\n1.ÖØĞÂÊäÈë¶Ô·½ÕË»§ºÅÂë");
-				printf("\n\n2.·µ»ØÖ÷²Ëµ¥");
-				printf("\n\n0.ÍË³öÏµÍ³\n");
+				printf("\n\n1.é‡æ–°è¾“å…¥å¯¹æ–¹è´¦æˆ·å·ç ");
+				printf("\n\n2.è¿”å›ä¸»èœå•");
+				printf("\n\n0.é€€å‡ºç³»ç»Ÿ\n");
 				scanf("%d", &a);
 				switch (a)
 				{
@@ -162,7 +162,7 @@ int FindACC3(Account TT)//²éÕÒ×ªÕËÕË»§
 		}
 		else if (strcmp(curP->AccountNum, TT.AccountNum) == 0)
 		{
-			curAccountO = curP;//µ±Ç°×ªÕË¶ÔÏóÕË»§
+			curAccountO = curP;
 			return 1;
 		}
 		curP = curP->next;
@@ -184,13 +184,13 @@ int Main()
 
 void main1()
 {
-	printf("\n¼üÈë¶ÔÓ¦Ñ¡ÏîÊı×Ö£¬°´»Ø³µ¼üÈ·ÈÏ¡£\n\t\n");
+	printf("\né”®å…¥å¯¹åº”é€‰é¡¹æ•°å­—ï¼ŒæŒ‰å›è½¦é”®ç¡®è®¤ã€‚\n\t\n");
 	int a, b = 0;
 	while (b != 1)
 	{
-		printf("\n\t1.ÓÃ»§µÇÂ¼\n");
-		printf("\t2.ÓÃ»§×¢²á\n");
-		printf("\t0.ÍË³ö\n");
+		printf("\n\t1.ç”¨æˆ·ç™»å½•\n");
+		printf("\t2.ç”¨æˆ·æ³¨å†Œ\n");
+		printf("\t0.é€€å‡º\n");
 		
 		scanf("%d", &a);
 		switch (a)
@@ -206,28 +206,28 @@ void main1()
 		default:
 			b = 1;
 			system("cls");
-			printf("\nÊäÈëÓĞÎó£¬Çë°´ÕÕÌáÊ¾ÔÙ´ÎÊäÈë!");
+			printf("\nè¾“å…¥æœ‰è¯¯ï¼Œè¯·æŒ‰ç…§æç¤ºå†æ¬¡è¾“å…¥!");
 			break;
 		}
 	}
 }
 
-void SignIn()//µÇÂ¼
+void SignIn()//ç™»å½•
 {
 	system("cls");
 	int m = 0, n = 0;
-	while (m < 3)//3´ÎÊäÈë´íÕËºÅ½«ÍË³öÏµÍ³
+	while (m < 3)
 	{
-		Account IV1;//ÕË»§ÖĞ¼ä±äÁ¿1
-		printf("\n\tÊäÈëÕËºÅ\n");
+		Account IV1;
+		printf("\n\tè¾“å…¥è´¦å·\n");
 		scanf("%s", IV1.AccountNum);
 		system("cls");
 		if (FindACC(IV1))
 		{
-			while (n < 3)//3´ÎÊäÈë´íÃÜÂë½«ÍË³öÏµÍ³
+			while (n < 3)
 			{
-				printf("\n\tÊäÈëÃÜÂë\n");
-				char storePassword[10] = { '\0' };    //´æ´¢ÓÃ»§ÊäÈëµÄÃÜÂë
+				printf("\n\tè¾“å…¥å¯†ç \n");
+				char storePassword[10] = { '\0' };    
 				getPassword(storePassword, 10);
 				strcpy(IV1.password, storePassword);
 				system("cls");
@@ -244,13 +244,13 @@ void SignIn()//µÇÂ¼
 					n++;
 					if (n == 3)
 					{
-						printf("\n\t¸ÃÕËºÅÒÑ±»¶³½á\n");
+						printf("\n\tè¯¥è´¦å·å·²è¢«å†»ç»“\n");
 						strcpy(curAccount->password, "abc");;
 						break;
 					}
 					else
 					{
-						printf("\n\tÃÜÂë´íÎó\n");
+						printf("\n\tå¯†ç é”™è¯¯\n");
 					}
 				}
 			}
@@ -258,10 +258,10 @@ void SignIn()//µÇÂ¼
 		else
 		{
 			m++;
-			printf("\n\tÃ»ÓĞ²éÕÒµ½¸ÃÓÃ»§!ÇëÖØĞÂÊäÈë\n");
+			printf("\n\tæ²¡æœ‰æŸ¥æ‰¾åˆ°è¯¥ç”¨æˆ·!è¯·é‡æ–°è¾“å…¥\n");
 			if (m == 3)
 			{
-				printf("\n\t´íÎó£¬ÒÑÍË³öÏµÍ³\n");
+				printf("\n\té”™è¯¯ï¼Œå·²é€€å‡ºç³»ç»Ÿ\n");
 				SaveUserData();
 				exit(0);
 			}
@@ -269,18 +269,18 @@ void SignIn()//µÇÂ¼
 	}
 }
 
-void Menu()//Ö÷²Ëµ¥
+void Menu() 
 {
 	int a, b = 1;
 	while (b)
 	{
 		b = 0;
-		printf("\n\t1.´æ¿î\n");
-		printf("\t2.È¡¿î");
-		printf("\n\t3.×ªÕÊ\n");
-		printf("\t4.²éÑ¯\n");
-		printf("\t5.ĞŞ¸Ä×ÊÁÏ\n");
-		printf("\t0.ÍË³öÏµÍ³\n");
+		printf("\n\t1.å­˜æ¬¾\n");
+		printf("\t2.å–æ¬¾");
+		printf("\n\t3.è½¬å¸\n");
+		printf("\t4.æŸ¥è¯¢\n");
+		printf("\t5.ä¿®æ”¹èµ„æ–™\n");
+		printf("\t0.é€€å‡ºç³»ç»Ÿ\n");
 		
 		scanf("%d", &a);
 		switch (a)
@@ -312,14 +312,14 @@ void Menu()//Ö÷²Ëµ¥
 			break;
 		default:
 			system("cls");
-			printf("\nÊäÈë´íÎó£¡\n");
+			printf("\nè¾“å…¥é”™è¯¯ï¼\n");
 			b = 1;
 			break;
 		}
 	}
 }
 
-void SaveTransaction()//´æ¿î¼ÇÂ¼
+void SaveTransaction() 
 {
 	Trade* TP = (Trade*)malloc(sizeof(Trade));
 	TP->Tnext = NULL;
@@ -334,14 +334,14 @@ void SaveTransaction()//´æ¿î¼ÇÂ¼
 		TTail = TP;
 		strcpy(TP->TAccountNum, curAccount->AccountNum);
 		strcpy(TP->Time, TA.Time);
-		strcpy(TP->Operation, "´æ¿î");
+		strcpy(TP->Operation, "å­˜æ¬¾");
 		TP->Money = TA.Money;
 
 		SaveTransactionData();
 	}
 }
 
-void WithdrawTransaction()//È¡¿î¼ÇÂ¼
+void WithdrawTransaction() 
 {
 	Trade* TP = (Trade*)malloc(sizeof(Trade));
 	TP->Tnext = NULL;
@@ -356,13 +356,13 @@ void WithdrawTransaction()//È¡¿î¼ÇÂ¼
 		TTail = TP;
 		strcpy(TP->TAccountNum, curAccount->AccountNum);
 		strcpy(TP->Time, TA.Time);
-		strcpy(TP->Operation, "È¡¿î");
+		strcpy(TP->Operation, "å–æ¬¾");
 		TP->Money = TA.Money;
 		SaveTransactionData();
 	}
 }
 
-void TransferTransaction()//×ªÕË¼ÇÂ¼
+void TransferTransaction() 
 {
 	Trade* TP = (Trade*)malloc(sizeof(Trade));
 	TP->Tnext = NULL;
@@ -377,7 +377,7 @@ void TransferTransaction()//×ªÕË¼ÇÂ¼
 		TTail = TP;
 		strcpy(TP->TAccountNum, curAccount->AccountNum);
 		strcpy(TP->Time, TA.Time);
-		strcpy(TP->Operation, "×ªÕË");
+		strcpy(TP->Operation, "è½¬è´¦");
 		TP->Money = TA.Money;
 		SaveTransactionData();
 	}
@@ -394,13 +394,13 @@ void TransferTransaction()//×ªÕË¼ÇÂ¼
 		TTail = TPi;
 		strcpy(TPi->TAccountNum, curAccountO->AccountNum);
 		strcpy(TPi->Time, TA.Time);
-		strcpy(TPi->Operation, "×ªÕË");
+		strcpy(TPi->Operation, "è½¬è´¦");
 		TPi->Money = -TA.Money;
 		SaveTransactionData();
 	}
 }
 
-void HandTransaction()//ÊÖĞø·Ñ¼ÇÂ¼
+void HandTransaction() 
 {
 	Trade* HP = (Trade*)malloc(sizeof(Trade));
 	HP->Tnext = NULL;
@@ -415,43 +415,43 @@ void HandTransaction()//ÊÖĞø·Ñ¼ÇÂ¼
 		TTail = HP;
 		strcpy(HP->TAccountNum, curAccount->AccountNum);
 		strcpy(HP->Time, TA.Time);
-		strcpy(HP->Operation, "ÊÖĞø·Ñ");
+		strcpy(HP->Operation, "æ‰‹ç»­è´¹");
 		HP->Money = -HandMoney;
 		SaveTransactionData();
 	}
 }
 
-void PrintTransaction()//´òÓ¡Á÷Ë®
+void PrintTransaction() 
 {
 	int a;
 	Trade* HcurP = THead;
-	while (HcurP != NULL)//½»Ò×¼ÇÂ¼
+	while (HcurP != NULL) 
 	{
 		if (strcmp(curAccount->AccountNum, HcurP->TAccountNum) == 0)
 		{
 			a++;
 			TCurAccount = HcurP;
-			printf("\n\tÊ±¼ä£º%s\tÖÖÀà£º%s\t½ğ¶î£º%.2f\n", TCurAccount->Time, TCurAccount->Operation, TCurAccount->Money);
+			printf("\n\tæ—¶é—´ï¼š%s\tç§ç±»ï¼š%s\té‡‘é¢ï¼š%.2f\n", TCurAccount->Time, TCurAccount->Operation, TCurAccount->Money);
 		}
 		HcurP = HcurP->Tnext;
 	}
 	if (a == 0)
 	{
-		printf("\n\tÎŞ½»Ò×¼ÇÂ¼\n\n");
+		printf("\n\tæ— äº¤æ˜“è®°å½•\n\n");
 	}
 }
 
-void SaveMoney()//´æ¿î
+void SaveMoney() 
 {
 	int a;
 	QK = 0;
-	printf("\tÎÂÜ°ÌáÊ¾£ºµ¥±Ê´æ¿î²»µÃ³¬¹ı10000¡£\n");
-	printf("\n\n\tÇëÊäÈëÄãÒª´æÈëµÄ½ğ¶î£º\n");
+	printf("\tæ¸©é¦¨æç¤ºï¼šå•ç¬”å­˜æ¬¾ä¸å¾—è¶…è¿‡10000ã€‚\n");
+	printf("\n\n\tè¯·è¾“å…¥ä½ è¦å­˜å…¥çš„é‡‘é¢ï¼š\n");
 	scanf("%d", &a);
 	if (a > 10000)
 	{
 		system("cls");
-		printf("\n\tµ¥±Ê´æ¿î²»µÃ³¬¹ı10000¡£\n");
+		printf("\n\tå•ç¬”å­˜æ¬¾ä¸å¾—è¶…è¿‡10000ã€‚\n");
 		SaveMoney1();
 	}
 	else
@@ -462,23 +462,23 @@ void SaveMoney()//´æ¿î
 		system("cls");
 		SaveUserData();
 		SaveTransaction();
-		printf("\n\t³É¹¦´æÈë%.2f!!!!\n", TA.Money);
+		printf("\n\tæˆåŠŸå­˜å…¥%.2f!!!!\n", TA.Money);
 		CK = 1;
 		SaveMoney1();
 	}
 }
 
-void SaveMoney1()//´æ¿îÑ¡Ïî
+void SaveMoney1() 
 {
 	int k = 0, b;
 	while (k < 3)
 	{
 		if (CK)
-			printf("\n\t1.ÔÙ´Î´æ¿î");
+			printf("\n\t1.å†æ¬¡å­˜æ¬¾");
 		else
-			printf("\n\t1.ÖØĞÂÊäÈë½ğ¶î");
-		printf("\n\t2.·µ»ØÖ÷²Ëµ¥\n");
-		printf("\n\t0.ÍË³öÏµÍ³\n");
+			printf("\n\t1.é‡æ–°è¾“å…¥é‡‘é¢");
+		printf("\n\t2.è¿”å›ä¸»èœå•\n");
+		printf("\n\t0.é€€å‡ºç³»ç»Ÿ\n");
 		
 		scanf("%d", &b);
 		switch (b)
@@ -504,17 +504,17 @@ void SaveMoney1()//´æ¿îÑ¡Ïî
 	}
 }
 
-void WithdrawMoney()//È¡¿î
+void WithdrawMoney() 
 {
 	int a;
 	CK = 0;
-	printf("\tÎÂÜ°ÌáÊ¾£ºµ¥±ÊÈ¡¿î²»µÃ³¬¹ı10000¡£\n");
-	printf("\n\nÇëÊäÈëÄãÒªÈ¡³öµÄ½ğ¶î£º");
+	printf("\tæ¸©é¦¨æç¤ºï¼šå•ç¬”å–æ¬¾ä¸å¾—è¶…è¿‡10000ã€‚\n");
+	printf("\n\nè¯·è¾“å…¥ä½ è¦å–å‡ºçš„é‡‘é¢ï¼š");
 	scanf("%d", &a);
 	if (a > 10000)
 	{
 		system("cls");
-		printf("\n\tµ¥±ÊÈ¡¿î²»µÃ³¬¹ı10000¡£\n");
+		printf("\n\tå•ç¬”å–æ¬¾ä¸å¾—è¶…è¿‡10000ã€‚\n");
 		WithdrawMoney1();
 	}
 	else
@@ -524,7 +524,7 @@ void WithdrawMoney()//È¡¿î
 		if (curAccount->balance + TA.Money < 0)
 		{
 			system("cls");
-			printf("\n\tÓà¶î²»×ã!!!!\n");
+			printf("\n\tä½™é¢ä¸è¶³!!!!\n");
 		}
 		else
 		{
@@ -532,24 +532,24 @@ void WithdrawMoney()//È¡¿î
 			system("cls");
 			SaveUserData();
 			WithdrawTransaction();
-			printf("\n\tÈ¡¿î³É¹¦!!!!\n");
+			printf("\n\tå–æ¬¾æˆåŠŸ!!!!\n");
 			QK = 1;
 		}
 		WithdrawMoney1();
 	}
 }
 
-void WithdrawMoney1()//È¡¿îÑ¡Ïî
+void WithdrawMoney1() 
 {
 	int k = 0, b;
 	while (k < 3)
 	{
 		if (QK)
-			printf("\n\n1.ÔÙ´ÎÈ¡¿î");
+			printf("\n\n1.å†æ¬¡å–æ¬¾");
 		else
-			printf("\n\n1.ÖØĞÂÊäÈë½ğ¶î");
-		printf("\n\t2.·µ»ØÖ÷²Ëµ¥");
-		printf("\n\t0.ÍË³öÏµÍ³");
+			printf("\n\n1.é‡æ–°è¾“å…¥é‡‘é¢");
+		printf("\n\t2.è¿”å›ä¸»èœå•");
+		printf("\n\t0.é€€å‡ºç³»ç»Ÿ");
 		
 		scanf("%d", &b);
 		switch (b)
@@ -575,23 +575,23 @@ void WithdrawMoney1()//È¡¿îÑ¡Ïî
 	}
 }
 
-void TransferMoney()//×ªÕË
+void TransferMoney() 
 {
 	int a;
 	ZZ = 0;
-	printf("\tÎÂÜ°ÌáÊ¾£º1.µ¥±ÊÈ¡¿î²»µÃ³¬¹ı10000¡£\n");
-	printf("\t        2.×ªÕË½«ÊÕÈ¡2%%µÄÊÖĞø·Ñ¡£\n\t\n");
-	printf("\n\nÇëÊäÈëÄãÒª×ª³öµ½µÄÕË»§£º");
+	printf("\tæ¸©é¦¨æç¤ºï¼š1.å•ç¬”å–æ¬¾ä¸å¾—è¶…è¿‡10000ã€‚\n");
+	printf("\t        2.è½¬è´¦å°†æ”¶å–2%%çš„æ‰‹ç»­è´¹ã€‚\n\t\n");
+	printf("\n\nè¯·è¾“å…¥ä½ è¦è½¬å‡ºåˆ°çš„è´¦æˆ·ï¼š");
 	Account TT;
 	scanf("%s", &TT.AccountNum);
 	if (FindACC3(TT))
 	{
 		system("cls");
-		printf("\nÇëÊäÈëÄãÒª×ª³öµÄ½ğ¶î£º");
+		printf("\nè¯·è¾“å…¥ä½ è¦è½¬å‡ºçš„é‡‘é¢ï¼š");
 		scanf("%d", &a);
 		if (a > 10000)
 		{
-			printf("\n\tµ¥±Ê×ªÕË²»µÃ³¬¹ı10000¡£\n");
+			printf("\n\tå•ç¬”è½¬è´¦ä¸å¾—è¶…è¿‡10000ã€‚\n");
 			TransferMoney1();
 		}
 		else
@@ -602,7 +602,7 @@ void TransferMoney()//×ªÕË
 			if (curAccount->balance + TA.Money - HandMoney < 0)
 			{
 				system("cls");
-				printf("\n\tÓà¶î²»×ã!!!!\n");
+				printf("\n\tä½™é¢ä¸è¶³!!!!\n");
 			}
 			else
 			{
@@ -612,7 +612,7 @@ void TransferMoney()//×ªÕË
 				TransferTransaction();
 				HandTransaction();
 				SaveUserData();
-				printf("\n\t×ªÕË³É¹¦!!!!\n");
+				printf("\n\tè½¬è´¦æˆåŠŸ!!!!\n");
 				ZZ = 1;
 			}
 			TransferMoney1();
@@ -621,23 +621,23 @@ void TransferMoney()//×ªÕË
 	else
 	{
 		system("cls");
-		printf("\n\t¶Ô·½ÕË»§²»´æÔÚ£¡£¡£¡£¡");
+		printf("\n\tå¯¹æ–¹è´¦æˆ·ä¸å­˜åœ¨ï¼ï¼ï¼ï¼");
 		TransferMoney1();
 	}
 
 }
 
-void TransferMoney1()//×ªÕËÑ¡Ïî
+void TransferMoney1() 
 {
 	int k = 0, b;
 	while (k < 3)
 	{
 		if (ZZ)
-			printf("\n\n1.ÔÙ´Î×ªÕË");
+			printf("\n\n1.å†æ¬¡è½¬è´¦");
 		else
-			printf("\n\n1.ÖØĞÂ×ªÕË");
-		printf("\n\t2.·µ»ØÖ÷²Ëµ¥");
-		printf("\n\t0.ÍË³öÏµÍ³\n");
+			printf("\n\n1.é‡æ–°è½¬è´¦");
+		printf("\n\t2.è¿”å›ä¸»èœå•");
+		printf("\n\t0.é€€å‡ºç³»ç»Ÿ\n");
 		
 		scanf("%d", &b);
 		switch (b)
@@ -663,17 +663,17 @@ void TransferMoney1()//×ªÕËÑ¡Ïî
 	}
 }
 
-void Inquire()//²éÑ¯Ò³
+void Inquire() 
 {
 
 	int a, b = 0;
 	while (b < 3)
 	{
-		printf("\n\t1.²éÑ¯Óà¶î");
-		printf("\n\t2.²éÑ¯½»Ò×¼ÇÂ¼\n");
-		printf("\t3.²éÑ¯¸öÈËĞÅÏ¢");
-		printf("\n\t4.·µ»ØÖ÷²Ëµ¥\n");
-		printf("\t0.ÍË³öÏµÍ³\n");
+		printf("\n\t1.æŸ¥è¯¢ä½™é¢");
+		printf("\n\t2.æŸ¥è¯¢äº¤æ˜“è®°å½•\n");
+		printf("\t3.æŸ¥è¯¢ä¸ªäººä¿¡æ¯");
+		printf("\n\t4.è¿”å›ä¸»èœå•\n");
+		printf("\t0.é€€å‡ºç³»ç»Ÿ\n");
 		
 		scanf("%d", &a);
 		switch (a)
@@ -710,16 +710,16 @@ void Inquire()//²éÑ¯Ò³
 	}
 }
 
-void InquireBalance()//²éÑ¯ÕË»§
+void InquireBalance() 
 {
 	SysTime();
-	printf("\n\tÄúµÄÓà¶îÎª\n%.2f\n", curAccount->balance);
+	printf("\n\tæ‚¨çš„ä½™é¢ä¸º\n%.2f\n", curAccount->balance);
 	int a, b = 0;
 	while (b < 3)
 	{
-		printf("\n1.·µ»ØÉÏÒ»Ò³");
-		printf("\t2.·µ»ØÖ÷²Ëµ¥\n");
-		printf("\n0.ÍË³öÏµÍ³\n");
+		printf("\n1.è¿”å›ä¸Šä¸€é¡µ");
+		printf("\t2.è¿”å›ä¸»èœå•\n");
+		printf("\n0.é€€å‡ºç³»ç»Ÿ\n");
 		
 		scanf("%d", &a);
 		switch (a)
@@ -745,17 +745,17 @@ void InquireBalance()//²éÑ¯ÕË»§
 	}
 }
 
-void InqInformation()//²éÑ¯¸öÈËĞÅÏ¢
+void InqInformation() 
 {
-	printf("\n\tĞÕÃû£º\n%s\n", curAccount->name);
-	printf("\n\tÕËºÅ£º\n%s\n", curAccount->AccountNum);
-	printf("\n\tÔ¤ÁôÊÖ»úºÅ£º\n%s\n", curAccount->PhoneNum);
+	printf("\n\tå§“åï¼š\n%s\n", curAccount->name);
+	printf("\n\tè´¦å·ï¼š\n%s\n", curAccount->AccountNum);
+	printf("\n\té¢„ç•™æ‰‹æœºå·ï¼š\n%s\n", curAccount->PhoneNum);
 	int a, k = 0;
 	while (k < 3)
 	{
-		printf("\n\t1.·µ»ØÉÏÒ»Ò³");
-		printf("\t2.·µ»ØÖ÷²Ëµ¥\n");
-		printf("\n\t0.ÍË³öÏµÍ³\n");
+		printf("\n\t1.è¿”å›ä¸Šä¸€é¡µ");
+		printf("\t2.è¿”å›ä¸»èœå•\n");
+		printf("\n\t0.é€€å‡ºç³»ç»Ÿ\n");
 		
 		scanf("%d", &a);
 		switch (a)
@@ -781,15 +781,15 @@ void InqInformation()//²éÑ¯¸öÈËĞÅÏ¢
 	}
 }
 
-void InqRecord()//²éÑ¯½»Ò×¼ÇÂ¼
+void InqRecord() 
 {
 	PrintTransaction();
 	int a, k = 0;
 	while (k < 3)
 	{
-		printf("\n1.·µ»ØÉÏÒ»Ò³");
-		printf("\t2.·µ»ØÖ÷²Ëµ¥\n");
-		printf("\n0.ÍË³öÏµÍ³\n");
+		printf("\n1.è¿”å›ä¸Šä¸€é¡µ");
+		printf("\t2.è¿”å›ä¸»èœå•\n");
+		printf("\n0.é€€å‡ºç³»ç»Ÿ\n");
 		
 		scanf("%d", &a);
 		switch (a)
@@ -815,17 +815,17 @@ void InqRecord()//²éÑ¯½»Ò×¼ÇÂ¼
 	}
 }
 
-void ChangeInformation()//ĞŞ¸ÄĞÅÏ¢²Ëµ¥
+void ChangeInformation() 
 {
 	system("cls");
 	int a, b = 1;
 	while (b)
 	{
-		printf("\n\t1.ĞŞ¸ÄÓÃ»§\n");
-		printf("\t2.ĞŞ¸Äµç»°\n");
-		printf("\t3.ĞŞ¸ÄÃÜÂë");
-		printf("\n\t4.·µ»ØÉÏÒ»Ò³\n");
-		printf("\t0.ÍË³öÏµÍ³\n");
+		printf("\n\t1.ä¿®æ”¹ç”¨æˆ·\n");
+		printf("\t2.ä¿®æ”¹ç”µè¯\n");
+		printf("\t3.ä¿®æ”¹å¯†ç ");
+		printf("\n\t4.è¿”å›ä¸Šä¸€é¡µ\n");
+		printf("\t0.é€€å‡ºç³»ç»Ÿ\n");
 		
 		scanf("%d", &a);
 		switch (a)
@@ -855,29 +855,29 @@ void ChangeInformation()//ĞŞ¸ÄĞÅÏ¢²Ëµ¥
 			exit(0);
 		default:
 			system("cls");
-			printf("ÊäÈë´íÎó£¡\tÇë°´ÕÕÌáÊ¾ÖØĞÂÊäÈë\n");
+			printf("è¾“å…¥é”™è¯¯ï¼\tè¯·æŒ‰ç…§æç¤ºé‡æ–°è¾“å…¥\n");
 			break;
 		}
 	}
 }
 
-void ChangeUserName()//ĞŞ¸ÄÓÃ»§
+void ChangeUserName() 
 {
 	int a, b = 0, c = 0;
 	while (b < 3)
 	{
 		system("cls");
-		printf("\n\tÇëÊäÈëĞÂÓÃ»§Ãû³Æ:");
+		printf("\n\tè¯·è¾“å…¥æ–°ç”¨æˆ·åç§°:");
 		scanf("%s", curAccount->name);
 		system("cls");
-		printf("\n\tÓÃ»§Ãû³ÆĞŞ¸Ä³É¹¦£¡\n");
+		printf("\n\tç”¨æˆ·åç§°ä¿®æ”¹æˆåŠŸï¼\n");
 		SaveUserData();
 		b = 3;
 		while (c < 3)
 		{
-			printf("\n1.·µ»ØÉÏÒ»Ò³");
-			printf("\t2.·µ»ØÖ÷²Ëµ¥\n");
-			printf("\n0.ÍË³öÏµÍ³\n");
+			printf("\n1.è¿”å›ä¸Šä¸€é¡µ");
+			printf("\t2.è¿”å›ä¸»èœå•\n");
+			printf("\n0.é€€å‡ºç³»ç»Ÿ\n");
 			
 			scanf("%d", &a);
 			switch (a)
@@ -904,23 +904,23 @@ void ChangeUserName()//ĞŞ¸ÄÓÃ»§
 	}
 }
 
-void ChangePhone()//ĞŞ¸Äµç»°
+void ChangePhone() 
 {
 	system("cls");
 	int a, b = 0, c = 0;
 	while (b < 3)
 	{
-		printf("\n\tÇëÊäÈëĞÂÁªÏµµç»°ºÅÂë");
+		printf("\n\tè¯·è¾“å…¥æ–°è”ç³»ç”µè¯å·ç ");
 		scanf("%s", curAccount->PhoneNum);
 		system("cls");
-		printf("\n\tÁªÏµµç»°ĞŞ¸Ä³É¹¦£¡\n");
+		printf("\n\tè”ç³»ç”µè¯ä¿®æ”¹æˆåŠŸï¼\n");
 		SaveUserData();
 		b = 3;
 		while (c < 3)
 		{
-			printf("\n1.·µ»ØÉÏÒ»Ò³");
-			printf("\t2.·µ»ØÖ÷²Ëµ¥\n");
-			printf("\n0.ÍË³öÏµÍ³\n");
+			printf("\n1.è¿”å›ä¸Šä¸€é¡µ");
+			printf("\t2.è¿”å›ä¸»èœå•\n");
+			printf("\n0.é€€å‡ºç³»ç»Ÿ\n");
 			
 			scanf("%d", &a);
 			switch (a)
@@ -947,32 +947,32 @@ void ChangePhone()//ĞŞ¸Äµç»°
 	}
 }
 
-void ChangePassword()//ĞŞ¸ÄÃÜÂë
+void ChangePassword() 
 {
 	system("cls");
 	int a, b = 0, c = 0;
 	char Password[100];
 	while (b < 3)
 	{
-		printf("\n\n\tÇëÊäÈëÔ­Ê¼ÃÜÂë£º");
+		printf("\n\n\tè¯·è¾“å…¥åŸå§‹å¯†ç ï¼š");
 		char storePassword[10] = { '\0' };
 		getPassword(storePassword, 10);
 		strcpy(Password, storePassword);
 		system("cls");
 		if (strcmp(Password, curAccount->password) == 0)
 		{
-			printf("\nÇëÊäÈëĞÂÃÜÂë:");
+			printf("\nè¯·è¾“å…¥æ–°å¯†ç :");
 			getPassword(storePassword, 10);
 			strcpy(curAccount->password, storePassword);
 			system("cls");
-			printf("\nĞŞ¸Ä³É¹¦£¡\n");
+			printf("\nä¿®æ”¹æˆåŠŸï¼\n");
 			SaveUserData();
 			b = 3;
 			while (c < 3)
 			{
-				printf("\n1.·µ»ØÉÏÒ»Ò³");
-				printf("\t2.·µ»ØÖ÷²Ëµ¥\n");
-				printf("\n0.ÍË³öÏµÍ³\n");		
+				printf("\n1.è¿”å›ä¸Šä¸€é¡µ");
+				printf("\t2.è¿”å›ä¸»èœå•\n");
+				printf("\n0.é€€å‡ºç³»ç»Ÿ\n");		
 				scanf("%d", &a);
 				switch (a)
 				{
@@ -1000,12 +1000,12 @@ void ChangePassword()//ĞŞ¸ÄÃÜÂë
 		{
 			b++;
 			system("cls");
-			printf("\n\tÃÜÂë´íÎó!\n");
+			printf("\n\tå¯†ç é”™è¯¯!\n");
 		}
 	}
 }
 
-void getPassword(char* storePw, int maxPwLen)//ÃÜÂëÊäÈë
+void getPassword(char* storePw, int maxPwLen) 
 {
 	char c = '\0';
 	char* pc = storePw;
@@ -1026,7 +1026,7 @@ void getPassword(char* storePw, int maxPwLen)//ÃÜÂëÊäÈë
 	}
 }
 
-void SysTime()//ÏµÍ³Ê±¼ä
+void SysTime() 
 {
 	time_t t = time(0);
 	char tmp[20];
@@ -1036,7 +1036,7 @@ void SysTime()//ÏµÍ³Ê±¼ä
 
 void SaveUserData()
 {
-	FILE* fp = fopen("D:/ÓÃ»§.txt", "w");//±£´æÓÃ»§Êı¾İ
+	FILE* fp = fopen("D:/ç”¨æˆ·.txt", "w"); 
 	if (fp != NULL)
 	{
 		Account* curP = head;
@@ -1051,7 +1051,7 @@ void SaveUserData()
 
 void SaveTransactionData()
 {
-	FILE* Tfp = fopen("D:/½»Ò×.txt", "at+");//±£´æ½»Ò×Êı¾İ
+	FILE* Tfp = fopen("D:/äº¤æ˜“.txt", "at+"); 
 	if (Tfp != NULL)
 	{
 		Trade* TcurP = THead;
@@ -1067,9 +1067,9 @@ void SaveTransactionData()
 	}
 }
 
-void IniUser_Data()//³õÊ¼»¯ÓÃ»§
+void IniUser_Data() 
 {
-	FILE* fp = fopen("D:/ÓÃ»§.txt", "r");
+	FILE* fp = fopen("D:/ç”¨æˆ·.txt", "r");
 	if (fp != NULL)
 	{
 		while (!feof(fp))
@@ -1093,9 +1093,9 @@ void IniUser_Data()//³õÊ¼»¯ÓÃ»§
 	}
 }
 
-void InitTraData()//³õÊ¼»¯½»Ò×ĞÅÏ¢
+void InitTraData() 
 {
-	FILE* Tfp = fopen("D:/½»Ò×.txt", "r");
+	FILE* Tfp = fopen("D:/äº¤æ˜“.txt", "r");
 	if (Tfp != NULL)
 	{
 		while (!feof(Tfp))
@@ -1119,19 +1119,19 @@ void InitTraData()//³õÊ¼»¯½»Ò×ĞÅÏ¢
 	}
 }
 
-void SignUp()//×¢²áº¯Êı
+void SignUp() 
 {
 	int a, k = 0;
 	system("cls");
-	Pset->next = NULL;//Account* Pset = (Account*)malloc(sizeof(Account));//ÒÑ¶¨Òå
+	Pset->next = NULL;//Account* Pset = (Account*)malloc(sizeof(Account));//å·²å®šä¹‰
 	if (head == NULL)
 	{
 		head = Pset;
-		tail = Pset;//Èç¹ûÕâÊÇµÚÒ»¸ö´´½¨µÄ½áµã£¬Ôò½«Í· Î²Ö¸ÕëÖ¸ÏòÕâ¸ö½áµã
+		tail = Pset; 
 	}
 	else
-		tail->next = Pset; //Èç¹û²»ÊÇµÚÒ»¸ö´´½¨µÄ½áµã£¬Ôò½«ÉÏÒ»¸ö½áµãµÄºó¼ÌÖ¸ÕëÖ¸Ïòµ±Ç°½áµã
-	printf("\nÇëÊäÈëĞÕÃû£º\n");
+		tail->next = Pset;  
+	printf("\nè¯·è¾“å…¥å§“åï¼š\n");
 	scanf("%s", ZX.name);
 	strcpy(Pset->name, ZX.name);
 	int ACCountNum = 10000;
@@ -1150,21 +1150,21 @@ void SignUp()//×¢²áº¯Êı
 	while (k < 3)
 	{
 		system("cls");
-		printf("\n×¢²á³É¹¦!\n");
-		printf("\nÄãµÄÕËºÅÎª%s\n", Pset->AccountNum);
-		printf("\t0.ÍË³öÏµÍ³\n");
+		printf("\næ³¨å†ŒæˆåŠŸ!\n");
+		printf("\nä½ çš„è´¦å·ä¸º%s\n", Pset->AccountNum);
+		printf("\t0.é€€å‡ºç³»ç»Ÿ\n");
 		scanf("%d", &a);
 		exit(0);
 	}
 }
 
-void SetPassword()//ÉèÖÃÃÜÂë
+void SetPassword() 
 {
 	int a = 0;
 	while (a < 3)
 	{
 		a++;
-		printf("\nÇëÉèÖÃÕË»§ÃÜÂë\n");
+		printf("\nè¯·è®¾ç½®è´¦æˆ·å¯†ç \n");
 		char storePassword[10] = { '\0' };
 		getPassword(storePassword, 10);
 		strcpy(ZX.password, storePassword);
@@ -1175,18 +1175,18 @@ void SetPassword()//ÉèÖÃÃÜÂë
 		}
 		else
 		{
-			printf("\nÃÜÂëÎªÁùÎ»£¬ÃÜÂëÉèÖÃÓĞÎó£¡\nÇëÖØĞÂÉèÖÃ\n");
+			printf("\nå¯†ç ä¸ºå…­ä½ï¼Œå¯†ç è®¾ç½®æœ‰è¯¯ï¼\nè¯·é‡æ–°è®¾ç½®\n");
 		}
 	}
 }
 
-void SetPhoneNum()//ÉèÖÃÊÖ»úºÅ
+void SetPhoneNum() 
 {
 	int a = 0;
 	while (a < 3)
 	{
 		a++;
-		printf("ÇëÊäÈëµç»°ºÅÂë\n");
+		printf("è¯·è¾“å…¥ç”µè¯å·ç \n");
 		scanf("%s", ZX.PhoneNum);
 		if (strlen(ZX.PhoneNum) == 11)
 		{
@@ -1196,7 +1196,7 @@ void SetPhoneNum()//ÉèÖÃÊÖ»úºÅ
 		else
 		{
 			system("cls");
-			printf("\nºÅÂëÓĞÎó£¡\nÇëÖØĞÂÊäÈë\n");
+			printf("\nå·ç æœ‰è¯¯ï¼\nè¯·é‡æ–°è¾“å…¥\n");
 		}
 	}
 }
